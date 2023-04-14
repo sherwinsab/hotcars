@@ -89,7 +89,7 @@ DATABASES = {
         'USER' : 'postgres',
         'PASSWORD' : 'hailmary012',
         'HOST' : 'web-production-036ec.up.railway.app',
-        'PORT' : '5432'
+        'PORT' : '5612'
     }
 }
 
