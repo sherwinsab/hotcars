@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'hotwheels',
         'USER' : 'postgres',
         'PASSWORD' : 'hailmary012',
-        'HOST' : 'localhost',
+        'HOST' : 'web-production-036ec.up.railway.app',
         'PORT' : '5432'
     }
 }
