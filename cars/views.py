@@ -30,8 +30,8 @@ from django.db.models import Sum
 import openai
 import requests
 
-import cv2
-from pytesseract import pytesseract
+# import cv2
+# from pytesseract import pytesseract
 from django.http import StreamingHttpResponse
 
 openai.api_key = "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" # Replace with your actual API key
