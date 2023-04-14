@@ -869,13 +869,13 @@ def numberPlates(request):
     def generate():
         frameWidth = 640    #Frame Width
         franeHeight = 480   # Frame Height
-        plateCascade = cv2.CascadeClassifier("E:\PyCharm\hi\haarcascade_russian_plate_number.xml")
+        plateCascade = cv2.CascadeClassifier("F:\hotcars\hi\haarcascade_russian_plate_number.xml")
         minArea = 500
         cap = cv2.VideoCapture(0)
         cap.set(3,frameWidth)
         cap.set(4,franeHeight)
         cap.set(10,150)
-        pytesseract.tesseract_cmd = r'E:/PyCharm/hi/tesseract.exe'
+        pytesseract.tesseract_cmd = r'F:/hotcars/hi/tesseract.exe'
         while True:
             success , img  = cap.read()
             imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
