@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'hotwheels.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.parse('postgresql://postgres:97YK5tMBtpb8GeacWttF@containers-us-west-14.railway.app:6859/railway') 
-    {
+    'default' : {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'DATABASE_URL' : 'postgresql://postgres:97YK5tMBtpb8GeacWttF@containers-us-west-14.railway.app:6859/railway',
         'NAME': 'railway',
         'USER' : 'postgres',
         'PASSWORD' : '97YK5tMBtpb8GeacWttF',
