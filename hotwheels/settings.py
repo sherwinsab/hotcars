@@ -90,7 +90,7 @@ DATABASES = {
         'PASSWORD' : '97YK5tMBtpb8GeacWttF',
         'HOST' : 'containers-us-west-14.railway.app',
         'PORT' : '6859',
-        'OPTIONS' : {'sslmode' : 'require'}
+#         'OPTIONS' : {'sslmode' : 'require'}
     }
 }
 
