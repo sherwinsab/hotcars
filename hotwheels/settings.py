@@ -85,11 +85,12 @@ WSGI_APPLICATION = 'hotwheels.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hotwheels',
+        'NAME': 'railway',
         'USER' : 'postgres',
-        'PASSWORD' : 'hailmary012',
-        'HOST' : 'web-production-036ec.up.railway.app',
-        'PORT' : '5432'
+        'PASSWORD' : '97YK5tMBtpb8GeacWttF',
+        'HOST' : 'containers-us-west-14.railway.app',
+        'PORT' : '6859',
+        'OPTIONS' : {'sslmode' : 'require'}
     }
 }
 
