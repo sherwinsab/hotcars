@@ -681,7 +681,7 @@ def order_payment(request):
             order.save()
 
             return render(request,'payment.html',{'email':email,'contactnumber':contactnumber,'customer':customer,'carscompanynames':carscompanynames,'cartypenames':cartypenames,
-            "callback_url": "http://" + "127.0.0.1:8000" + "/cars/callback/",
+            "callback_url": "http://" + "127.0.0.1:8000" + "/callback/",
             "razorpay_key": "rzp_test_1sFSQT1jdm1swd",
             "order": order,
             }
