@@ -865,30 +865,30 @@ def run(request):
     return redirect('signin')
 
 
-def numberPlates(request):
-    def generate():
-        frameWidth = 640    #Frame Width
-        franeHeight = 480   # Frame Height
-        plateCascade = cv2.CascadeClassifier("F:\hotcars\hi\haarcascade_russian_plate_number.xml")
-        minArea = 500
-        cap = cv2.VideoCapture(0)
-        cap.set(3,frameWidth)
-        cap.set(4,franeHeight)
-        cap.set(10,150)
-        pytesseract.tesseract_cmd = r'F:/hotcars/hi/tesseract.exe'
-        while True:
-            success , img  = cap.read()
-            imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            numberPlates = plateCascade .detectMultiScale(imgGray, 1.1, 4)
-            for (x, y, w, h) in numberPlates:
-                area = w*h
-                if area > minArea:
-                    imgRoi = img[y:y+h,x:x+w]
-                    text = pytesseract.image_to_string(imgRoi)
-                    yield f"Number Plate Detected: {text}\n\n"      
-    response = StreamingHttpResponse(generate(), content_type='text/event-stream')
-    response['Cache-Control'] = 'no-cache'
-    return response
+# def numberPlates(request):
+#     def generate():
+#         frameWidth = 640    #Frame Width
+#         franeHeight = 480   # Frame Height
+#         plateCascade = cv2.CascadeClassifier("F:\hotcars\hi\haarcascade_russian_plate_number.xml")
+#         minArea = 500
+#         cap = cv2.VideoCapture(0)
+#         cap.set(3,frameWidth)
+#         cap.set(4,franeHeight)
+#         cap.set(10,150)
+#         pytesseract.tesseract_cmd = r'F:/hotcars/hi/tesseract.exe'
+#         while True:
+#             success , img  = cap.read()
+#             imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+#             numberPlates = plateCascade .detectMultiScale(imgGray, 1.1, 4)
+#             for (x, y, w, h) in numberPlates:
+#                 area = w*h
+#                 if area > minArea:
+#                     imgRoi = img[y:y+h,x:x+w]
+#                     text = pytesseract.image_to_string(imgRoi)
+#                     yield f"Number Plate Detected: {text}\n\n"      
+#     response = StreamingHttpResponse(generate(), content_type='text/event-stream')
+#     response['Cache-Control'] = 'no-cache'
+#     return response
     
     
 def featured_vechiles(request):
