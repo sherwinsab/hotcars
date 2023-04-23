@@ -30,11 +30,11 @@ from django.db.models import Sum
 import openai
 import requests
 
-import cv2
-from pytesseract import pytesseract
+# import cv2
+# from pytesseract import pytesseract
 from django.http import StreamingHttpResponse
 
-openai.api_key = "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" # Replace with your actual API key
+openai.api_key = "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" # Replace with your actual API key
 model_engine = "text-davinci-003"
 # import numpy as np
 # import pandas as pd
@@ -681,7 +681,7 @@ def order_payment(request):
             order.save()
 
             return render(request,'payment.html',{'email':email,'contactnumber':contactnumber,'customer':customer,'carscompanynames':carscompanynames,'cartypenames':cartypenames,
-            "callback_url": "http://" + "127.0.0.1:8000" + "/cars/callback/",
+            "callback_url": "http://" + "web-production-e131.up.railway.app" + "/callback/",
             "razorpay_key": "rzp_test_1sFSQT1jdm1swd",
             "order": order,
             }
@@ -869,13 +869,13 @@ def numberPlates(request):
     def generate():
         frameWidth = 640    #Frame Width
         franeHeight = 480   # Frame Height
-        plateCascade = cv2.CascadeClassifier("hi\haarcascade_russian_plate_number.xml")
+        plateCascade = cv2.CascadeClassifier("F:\hotcars\hi\haarcascade_russian_plate_number.xml")
         minArea = 500
         cap = cv2.VideoCapture(0)
         cap.set(3,frameWidth)
         cap.set(4,franeHeight)
         cap.set(10,150)
-        pytesseract.tesseract_cmd = r'hi/tesseract.exe'
+        pytesseract.tesseract_cmd = r'F:/hotcars/hi/tesseract.exe'
         while True:
             success , img  = cap.read()
             imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

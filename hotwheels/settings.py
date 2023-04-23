@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-ibpz6ku_&h_-^in_lto%md*ik4-3v_64d%ecu6$3x%w&2609qi
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-e131.up.railway.app']
 
 
 # Application definition
@@ -83,13 +84,13 @@ WSGI_APPLICATION = 'hotwheels.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default' : {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hotwheels',
+        'NAME': 'railway',
         'USER' : 'postgres',
-        'PASSWORD' : 'hailmary012',
-        'HOST' : 'web-production-036ec.up.railway.app',
-        'PORT' : '5432'
+        'PASSWORD' : 'BtE37Ft1ufZzVLBG9mWa',
+        'HOST' : 'containers-us-west-39.railway.app',
+        'PORT' : '7011',
     }
 }
 
